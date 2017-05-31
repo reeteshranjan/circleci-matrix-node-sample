@@ -5,4 +5,5 @@ dependencies:
 
 test:
   post:
-    - node --version
+    - node --version:
+      parallel: true
