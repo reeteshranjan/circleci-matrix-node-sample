@@ -1,9 +1,11 @@
 dependencies:
   pre:
     - case $CIRCLE_NODE_INDEX in 0) NODE_VERSION=4 ;; 1) NODE_VERSION=5 ;; 2) NODE_VERSION=6 ;; 3) NODE_VERSION=7 ;; esac; nvm install $NODE_VERSION && nvm use $NODE_VERSION:
-      parallel: true
+        parallel: true
 
 test:
   override:
+    - nvm ls:
+        parallel: true
     - node --version:
-      parallel: true
+        parallel: true
